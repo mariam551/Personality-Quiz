@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"href="https://www.w3schools.com/w3css/4/w3.css">
+<body background= "Blue.png">
+
+<div class="w3-container w3-blue">
+<h1 style = <center><font face ="Brush Script MT" size = "25" color = "white"> What Chocolate Bar are you? </center></h1>
+</div>
+
+
+<div style= "font-size:20px; font-family:Cambria; color:blue" id="q1">
+  <br><center>
+Question 1: How do you prefer your snacks?<br>
+<input type="radio" name="choose1" onclick="trueAns()" class="o1" value= "Simple" > Simple<br>
+<input type="radio" name="choose1" onclick="trueAns()" class="o1" value= "Sweet" > Sweet<br>
+<input type="radio" name="choose1" onclick="trueAns()" class="o1" value= "Crispy" > Crispy<br>
+</center>
+</div>
+
+<div style= "font-size:20px; font-family:Cambria; color:blue;" id="q2">
+<center>
+Question 2: How do you prefer the texture of your baked chocolate chip cookies?<br>
+<input type="radio" name="choose2" onclick="trueAns()" class="o1" value= "Doesn't matter to me." > Doesn't matter to me <br>
+<input type="radio" name="choose2" onclick="trueAns()" class="o1" value= "100% smooth chocolate" > 100% smooth chocolate<br>
+<input type="radio" name="choose2" onclick="trueAns()" class="o1" value= "I'm all about crunchiness" > I'm all about crunchiness<br>
+</center>
+</div>
+
+<div style= "font-size:20px; font-family:Cambria; color:blue" id="q3">
+<center>
+Question 3: How do you like the filling of your chocolate?<br>
+<input type="radio" name="choose" onclick="trueAns()" class="o1" value= "Including nuts" > Including nuts  <br>
+<input type="radio" name="choose" onclick="trueAns()" class="o1" value= "Including caramel" > Including caramel<br>
+<input type="radio" name="choose" onclick="trueAns()" class="o1" value= "Including wafers" > Including wafers<br>
+</center>
+</div>
+
+
+<center><button onclick="getResults()" style= "font-size:25px; color:Red"><center> What chocolate am I? </button></center>
+
+<p id="demo">
+</p>
+<script>
+function getResults(){
+var HersheyTally = 0;
+var MilkyWay = 0;
+var Kitkat = 0;
+
+
+var category1 = document.querySelector('input[name = "q1"]: checked').value;
+  if(category1) == 'Simple'){
+    HersheyTally++;
+  }
+  else if (category1 == 'Sweet'){
+    MilkyWay++ ;
+  }
+  else if (category1 == 'Crispy'){
+      Kitkat++;
+    }
+
+var category2 = document.querySelector('input[name = "q2"]: checked').value;
+  if(category2) == 'Does not matter to me.'){
+    HersheyTally++;
+  }
+  else if (category2 == '100% smooth chocolate'){
+  MilkyWay++;
+}
+else if (category2 == 'I am all about crunchiness'){
+    Kitkat++;
+  }
+
+var category3 = document.querySelector('input[name = "q3"]: checked').value;
+  if(category3) == 'Including nuts.'){
+    HersheyTally++;
+  }
+  else if (category3 == 'Including caramel'){
+    MilkyWay++ ;
+  }
+  else if (category3 == 'Including wafers'){
+    Kitkat++;
+  }
+
+
+if (HersheyTally > Milky Way && HersheyTally > KitKat){
+  alert('You are a Hershey Bar');
+}
+
+if(MilkyWay > HersheyTally && MilkyWay > Kitkat){
+  alert('You are a Milky Way Bar');
+}
+
+if(Kitkat > HersheyTally && Kitkat > MilkyWay){
+  alert('You are a Kitkat Bar');
+}
+else {
+    alert('You are a Snicker Bar');
+  }
+}
+}
+
+//https://www.sitepoint.com/community/t/how-to-make-answers-effect-points-score-in-a-javascript-quiz/209845
+
+</script>
+</body>
+</html>
